@@ -1,13 +1,19 @@
 new Vue({
   el: "#app",
   data: {
-    x: 0,
-    y: 0,
+    firstName: "",
+    lastName: "",
+    gender: true,
   },
   methods: {
-    updateCoordinates: function (event) {
-      this.x = event.clientX;
-      this.y = event.clientY;
+    changeValueInput: function (event) {
+      if (event.target.name === "gender") {
+        this.gender = event.target.checked;
+      }
+      this[event.target.name] = event.target.value;
+    },
+    submit: function () {
+      console.log(this.firstName, this.lastName, this.gender);
     },
   },
 });

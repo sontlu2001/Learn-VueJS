@@ -8,11 +8,22 @@
   </head>
   <body>
     <div id="app">
-      <div
-        @mousemove="updateCoordinates"
-        style="width: 200px; height: 200px; background-color: blue"></div>
-      <p>X: {{x}}</p>
-      <p>Y: {{y}}</p>
+      <form @submit.prevent="submit">
+        <div>
+          <label for="">First Name</label>
+          <input type="text" name="firstName" @change="changeValueInput" />
+        </div>
+        <div>
+          <label for="">Last Name</label>
+          <input type="text" name="lastName" @change="changeValueInput" />
+        </div>
+        <label for="">Gender</label>
+        <select name="gender" id="" @change="changeValueInput">
+          <option value="true">Male</option>
+          <option value="false">Female</option>
+        </select>
+        <button type="submit" @keyup.enter>Submit</button>
+      </form>
     </div>
   </body>
   <script src="./main.js"></script>
