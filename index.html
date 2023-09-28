@@ -10,10 +10,12 @@
     <div id="app">
       <label for="">Count:</label>
       <span :id="count">{{count}}</span>
-      <input type="checkbox" name="" id="" :checked="isActive()" />
       <br />
       <button @click="start">start</button>
-      <button @click="stop">stop</button>
+      <span v-html="elementStop" v-if="isActive" v-on:click="stop()"></span>
+      <span v-html="elementReset" v-if="isActive" v-on:click="reset()"
+        >Reset</span
+      >
     </div>
   </body>
   <script src="./main.js"></script>
