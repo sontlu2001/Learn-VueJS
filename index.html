@@ -9,9 +9,11 @@
   <body>
     <div id="app">
       <label for="">Count:</label>
-      <span>{{getCount()}}</span>
-      <p v-once>Count will never change: <span>{{count}}</span></p>
-      <button v-on:click="increment">Increment</button>
+      <span :id="count">{{count}}</span>
+      <input type="checkbox" name="" id="" :checked="isActive()" />
+      <br />
+      <button @click="start">start</button>
+      <button @click="stop">stop</button>
     </div>
   </body>
   <script src="./main.js"></script>
