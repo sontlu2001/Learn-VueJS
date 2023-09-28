@@ -8,7 +8,10 @@
   </head>
   <body>
     <div id="app">
-      <p>{{title}}</p>
+      <label for="">Count:</label>
+      <span>{{getCount()}}</span>
+      <p v-once>Count will never change: <span>{{count}}</span></p>
+      <button v-on:click="increment">Increment</button>
     </div>
   </body>
   <script src="./main.js"></script>
