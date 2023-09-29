@@ -1,19 +1,27 @@
 new Vue({
   el: "#app",
   data: {
-    firstName: "",
-    lastName: "",
-    gender: true,
+    a: 0,
+    b: 0,
+  },
+  computed: {
+    getValueA() {
+      console.log("getValueA");
+      return this.a;
+    },
+    getValueB() {
+      console.log("getValueB");
+      return this.b;
+    },
   },
   methods: {
-    changeValueInput: function (event) {
-      if (event.target.name === "gender") {
-        this.gender = event.target.checked;
-      }
-      this[event.target.name] = event.target.value;
-    },
-    submit: function () {
-      console.log(this.firstName, this.lastName, this.gender);
-    },
+    // getValueA() {
+    //   console.log("getValueA");
+    //   return this.a;
+    // },
+    // getValueB() {
+    //   console.log("getValueB");
+    //   return this.b;
+    // },
   },
 });

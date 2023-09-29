@@ -8,22 +8,10 @@
   </head>
   <body>
     <div id="app">
-      <form @submit.prevent="submit">
-        <div>
-          <label for="">First Name</label>
-          <input type="text" name="firstName" @change="changeValueInput" />
-        </div>
-        <div>
-          <label for="">Last Name</label>
-          <input type="text" name="lastName" @change="changeValueInput" />
-        </div>
-        <label for="">Gender</label>
-        <select name="gender" id="" @change="changeValueInput">
-          <option value="true">Male</option>
-          <option value="false">Female</option>
-        </select>
-        <button type="submit" @keyup.enter>Submit</button>
-      </form>
+      <p for="">A: {{getValueA}}</p>
+      <p for="">B: {{getValueB}}</p>
+      <button @click="a++">Increment A</button>
+      <button @click="b++">Increment B</button>
     </div>
   </body>
   <script src="./main.js"></script>
