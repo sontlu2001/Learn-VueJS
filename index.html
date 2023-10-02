@@ -8,10 +8,11 @@
   </head>
   <body>
     <div id="app">
-      <p for="">A: {{getValueA}}</p>
-      <p for="">B: {{getValueB}}</p>
-      <button @click="a++">Increment A</button>
-      <button @click="b++">Increment B</button>
+      <button @click="fetchUsers">Fetch data</button>
+      <div v-if="isLoading">Loading...</div>
+      <ul>
+        <li v-for="user in users" :key="user.id">{{user.name}}</li>
+      </ul>
     </div>
   </body>
   <script src="./main.js"></script>

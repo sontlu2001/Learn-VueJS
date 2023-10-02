@@ -1,27 +1,27 @@
 new Vue({
   el: "#app",
   data: {
-    a: 0,
-    b: 0,
-  },
-  computed: {
-    getValueA() {
-      console.log("getValueA");
-      return this.a;
-    },
-    getValueB() {
-      console.log("getValueB");
-      return this.b;
-    },
+    isLoading: false,
+    users: [],
   },
   methods: {
-    // getValueA() {
-    //   console.log("getValueA");
-    //   return this.a;
-    // },
-    // getValueB() {
-    //   console.log("getValueB");
-    //   return this.b;
-    // },
+    fetchUsers() {
+      this.isLoading = true;
+      setTimeout(() => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .then((response) => response.json())
+          .then((data) => {
+            this.users = data;
+          })
+          .catch((error) => console.log(error));
+      }, 2000);
+    },
+  },
+  watch: {
+    users(newVal, oldVal) {
+      if (newVal !== oldVal) {
+        this.isLoading = false;
+      }
+    },
   },
 });
