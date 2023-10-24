@@ -7,7 +7,36 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app" style="display: flex; gap: 20px">
+      <div
+        class="box"
+        @click="toggleActive(1)"
+        :class="{active:isActive[1]}"></div>
+      <div
+        class="box"
+        @click="toggleActive(2)"
+        :class="{active:isActive[2]}"></div>
+      <div
+        class="box"
+        @click="toggleActive(3)"
+        :class="{active:isActive[3]}"></div>
+    </div>
   </body>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      border: 1px solid rgb(80, 76, 76);
+    }
+    .box:hover {
+      background-color: rgb(145, 199, 173);
+    }
+    .active {
+      background-color: red;
+    }
+    .border-white {
+      border: 1px solid white;
+    }
+  </style>
   <script src="./main.js"></script>
 </html>
